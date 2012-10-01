@@ -42,8 +42,8 @@ describe 'configuring databases' do
 
   describe 'loading a connection from the configuration' do
     let(:configuration)   { Mongo::Configure.current }
-    let(:fake_connector)  { double from_uri: fake_connection }
-    let(:fake_connection) { double db: database }
+    let(:fake_connector)  { double :from_uri => fake_connection }
+    let(:fake_connection) { double :db => database }
     let(:database)        { double }
 
     before do
