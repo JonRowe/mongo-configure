@@ -1,3 +1,4 @@
+[![Build Status](https://secure.travis-ci.org/JonRowe/mongo-configure.png)](http://travis-ci.org/JonRowe/mongo-configure)
 # Mongo::Configure
 
 A simple gem for configuring mongo databases.
