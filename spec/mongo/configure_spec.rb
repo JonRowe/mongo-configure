@@ -1,4 +1,4 @@
-require 'mongo-configure'
+require 'mongo/configure'
 
 describe 'configuring databases' do
   describe 'from a uri' do

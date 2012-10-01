@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/mongo-configure/version', __FILE__)
+require File.expand_path('../lib/mongo/configure/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Jon Rowe"]
@@ -17,5 +17,7 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency             'morphine'
   gem.add_dependency             'mongo'
+
   gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'rake'
 end

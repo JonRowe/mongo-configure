@@ -1,4 +1,4 @@
-require 'mongo-configure/uri'
+require 'mongo/configure/uri'
 
 describe 'parsing Mongo URIs' do
   describe 'falling back to defaults' do
