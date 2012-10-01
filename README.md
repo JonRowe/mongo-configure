@@ -18,7 +18,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+When you have a Mongo URI:
+    Mongo::Configure.from_uri "mongodb://remote_server.com:27017/production"
+
+When you only care about the database name:
+    Mongo::Configure.from_database "test_db"
+
+To reaccess a previously configured configuration:
+    Mongo::Configure.current
+
+To access a configured database connection:
+    configuration.load
 
 ## Contributing
 

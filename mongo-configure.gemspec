@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["hello@jonrowe.co.uk"]
   gem.description   = %q{A simple gem for configuring mongo databases.}
   gem.summary       = %q{A simple gem for configuring mongo databases.}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/JonRowe/mongo-configure"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
@@ -15,5 +15,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Mongo::Configure::VERSION
 
+  gem.add_dependency             'morphine'
+  gem.add_dependency             'mongo'
   gem.add_development_dependency 'rspec'
 end
