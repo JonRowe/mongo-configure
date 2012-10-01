@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "mongo-configure"
   gem.require_paths = ["lib"]
   gem.version       = Mongo::Configure::VERSION
+
+  gem.add_development_dependency 'rspec'
 end
