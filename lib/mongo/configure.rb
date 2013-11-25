@@ -28,7 +28,7 @@ module Mongo
         @config = Config.new URI.new.tap { |uri| uri.database = name }
       end
       def current
-        @config ||= new
+        @config ||= Config.new 'localhost/database'
       end
 
     end

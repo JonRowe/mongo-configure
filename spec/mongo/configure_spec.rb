@@ -34,10 +34,16 @@ describe 'configuring databases' do
     its(:to_s)     { should == 'mongodb://localhost:27017/test' }
   end
 
-  describe 'accessing a configuration' do
-    let!(:configuration) { Mongo::Configure.from_database("test") }
-    subject { Mongo::Configure.current }
-    it { should == configuration }
+  describe 'accessing an existing configuration' do
+    it "will create a configuration when one doesn't exist" do
+      Mongo::Configure.instance_variable_set('@config',nil)
+      expect(Mongo::Configure.current).to be_a Mongo::Configure::Config
+    end
+
+    it "will present the last configuration when one does exist" do
+      configuration = Mongo::Configure.from_database("test")
+      expect(Mongo::Configure.current).to eq configuration
+    end
   end
 
   describe 'loading a connection from the configuration' do
