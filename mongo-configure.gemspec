@@ -14,6 +14,7 @@ Gem::Specification.new do |gem|
   gem.name          = "mongo-configure"
   gem.require_paths = ["lib"]
   gem.version       = Mongo::Configure::VERSION
+  gem.license       = 'MIT'
 
   gem.add_dependency             'morphine'
   gem.add_dependency             'mongo'
