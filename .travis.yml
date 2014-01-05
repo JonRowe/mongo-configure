@@ -8,3 +8,8 @@ rvm:
   - jruby-19mode
   - rbx
 script: bundle exec rspec
+before_install:
+  - gem update bundler
+  - bundle --version
+  - gem update --system 2.1.11
+  - gem --version
