@@ -20,5 +20,9 @@ Gem::Specification.new do |gem|
   gem.add_dependency             'mongo'
 
   gem.add_development_dependency 'rspec'
-  gem.add_development_dependency 'rake'
+  if RUBY_VERSION.to_f >= 2
+    gem.add_development_dependency 'rake', '~> 11.0.0'
+  else
+    gem.add_development_dependency 'rake', '~> 10.0.0'
+  end
 end
