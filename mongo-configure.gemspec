@@ -16,10 +16,13 @@ Gem::Specification.new do |gem|
   gem.version       = Mongo::Configure::VERSION
   gem.license       = 'MIT'
 
-  gem.add_dependency             'morphine'
-  gem.add_dependency             'mongo'
+  gem.required_ruby_version = '>= 1.9.3'
+
+  gem.add_dependency 'morphine'
+  gem.add_dependency 'mongo'
 
   gem.add_development_dependency 'rspec'
+
   if RUBY_VERSION.to_f >= 2
     gem.add_development_dependency 'rake', '~> 11.0.0'
   else
