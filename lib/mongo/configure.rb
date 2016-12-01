@@ -1,5 +1,6 @@
 require 'morphine'
-require "mongo/configure/version"
+require 'mongo'
+require 'mongo/configure/version'
 require 'mongo/configure/uri'
 
 module Mongo
@@ -8,7 +9,7 @@ module Mongo
     class Config
       include Morphine
 
-      register(:connection) { Connection }
+      register(:connection) { ::Mongo::Connection }
 
       def initialize(uri)
         @uri = uri
