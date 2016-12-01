@@ -1,4 +1,3 @@
-require 'morphine'
 require 'mongo'
 require 'mongo/configure/version'
 require 'mongo/configure/uri'
@@ -7,16 +6,14 @@ module Mongo
   module Configure
 
     class Config
-      include Morphine
-
-      register(:connection) { ::Mongo::Connection }
-
       def initialize(uri)
         @uri = uri
       end
+
       attr_reader :uri
+
       def load
-        connection.from_uri(@uri.to_s).db @uri.database
+        Mongo::Client.new(@uri.to_s).database
       end
     end
 

@@ -1,6 +1,6 @@
 require 'mongo/configure'
 
-describe 'configuring databases' do
+RSpec.describe 'configuring databases' do
   describe 'from a uri' do
     let(:config) { Mongo::Configure.from_uri('secretsquirrel://server.name:666/data').uri }
 
@@ -45,27 +45,14 @@ describe 'configuring databases' do
 
   describe 'loading a connection from the configuration' do
     let(:configuration)   { Mongo::Configure.current }
-    let(:fake_connector)  { double :from_uri => fake_connection }
-    let(:fake_connection) { double :db => database }
-    let(:database)        { double }
 
     before do
-      Mongo::Configure.from_uri 'secretsquirrel://server.name:666/data'
-      configuration.connection = fake_connector
+      Mongo::Logger.level = :error
+      Mongo::Configure.from_uri 'mongodb://127.0.0.1:27017/test'
     end
 
-    it "loads the database from uri" do
-      expect(fake_connector).to receive(:from_uri).with 'secretsquirrel://server.name:666/data'
-      configuration.load
-    end
-
-    it "gets the database named" do
-      expect(fake_connection).to receive(:db).with "data"
-      configuration.load
-    end
-
-    it 'returns the database' do
-      expect(configuration.load).to eq database
+    it 'loads the database from config and returns the database' do
+      expect(configuration.load).to be_a Mongo::Database
     end
   end
 end
