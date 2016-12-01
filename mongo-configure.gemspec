@@ -18,8 +18,7 @@ Gem::Specification.new do |gem|
 
   gem.required_ruby_version = '>= 1.9.3'
 
-  gem.add_dependency 'morphine'
-  gem.add_dependency 'mongo'
+  gem.add_dependency 'mongo', '~> 2.4'
 
   gem.add_development_dependency 'rspec'
 
