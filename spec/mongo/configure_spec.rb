@@ -47,7 +47,7 @@ RSpec.describe 'configuring databases' do
     let(:configuration)   { Mongo::Configure.current }
 
     before do
-      Mongo::Logger.level = :error
+      Mongo::Logger.level = Logger::ERROR
       Mongo::Configure.from_uri 'mongodb://127.0.0.1:27017/test'
     end
 
